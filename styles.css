@@ -1,0 +1,139 @@
+
+    header {
+        position: relative; /* Asegura que el posicionamiento relativo sea relativo al header */
+    }
+
+    header::after {
+        content: ""; /* Añade un pseudo-elemento después del contenido del header */
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0; /* Inicia con una anchura de 0 */
+        height: 1px; /* Grosor del borde inferior */
+        background-color: rgba(27, 150, 138, 0.19);
+        animation: aparecer 1s ease-in-out forwards; /* Aplica la animación */
+    }
+
+    /* Definición de la animación */
+    @keyframes aparecer {
+        to {
+            width: 100%; /* Termina con la anchura completa */
+        }
+    }
+    .navbar {
+    height: 110px; /* Ajusta la altura del header según tus necesidades */
+    }
+    .navbar-brand img {
+    max-height: 160px;
+    }
+    nav.navbar .navbar-nav .nav-link {
+    color: rgb(45, 121, 105);
+    padding-right: 30px; 
+    }
+    .navbar-brand,
+    .nav-link {
+    color: #fff;
+    }
+    .navbar-toggler-icon {
+    background-color: #fff;
+    }
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .content-wrap {
+        flex: 1;
+    }
+    section {
+        margin-bottom: 10%; /* Ajusta el valor según la altura de tu footer */
+    }
+    
+    h1 {
+        font-family: 'Helvetica Neue', sans-serif; /* Cambia la fuente */
+        color: #535353bb; /* Cambia el color del texto */
+        margin-top: 3%;
+        margin-bottom: 30px;
+    }
+
+    /* Estilos para el banner */
+    #banner {
+        text-align: center; /* Centra horizontalmente */
+        margin-top: 20px; /* Espacio superior */
+        background-color: rgba(13, 120, 109, 0.084); /* Color de fondo para rellenar los márgenes */
+        padding: 20px; /* Espacio interno para separar el contenido del borde */
+        opacity: 0; /* Inicia la opacidad en 0 para ocultar el carrusel al principio */
+        transition: opacity 2s ease-in-out; /* Transición suave de la opacidad durante 1 segundo */
+    }
+    #banner.loaded {
+        opacity: 1; /* Cambia la opacidad a 1 para mostrar el carrusel después de la carga */
+    }
+
+    #banner img {
+        max-width: 100%; /* Asegura que la imagen no se desborde */
+        height: auto; /* Hace que la altura se ajuste automáticamente para mantener la proporción */
+    }
+
+    .carousel-control-prev {
+        background-color: #44889946;
+    }
+    .carousel-control-next {
+        background-color: #44889946;
+    }
+    .carousel-item.active,
+    .carousel-item-next {
+        opacity: 12; /* Mantiene la opacidad en 1 para la imagen activa y la siguiente */
+        transition: opacity 0.5s ease-in-out; /* Transición de desvanecimiento con duración de 0.5 segundos */
+    }
+
+    .carousel-item {
+        opacity: 0; /* Inicia la opacidad en 0 para todas las imágenes del carrusel */
+    }
+
+    .carousel-inner {
+        overflow: hidden; /* Oculta el contenido que se desborda horizontalmente */
+    }
+
+
+    .aboutusimg {
+        padding-top: 10%;
+        padding-left: 30%;
+        padding-bottom: 25%;
+    }
+
+    /* Estilos para el pie de página */
+    footer {
+    background-color:#1f9e9cce;
+    color: #fff;
+    position: fixed; /* Fija la posición del footer */
+    bottom: 0; /* Lo sitúa en la parte inferior */
+    width: 100%; /* Ocupa todo el ancho */
+    padding: 20px;
+    }
+    #contact {
+        font-size: 26px;
+    }
+    a {
+        color:#0e2d2c;
+    }
+    a:hover {
+        text-decoration: none;
+        color: #1b7876;
+    }
+    .aboutusimage {
+        background-color:#46a6be20;
+    }
+    @media (max-width: 1000px) {
+        .navbar {
+            height: 2%; /* Altura del 10% del viewport height en pantallas pequeñas */
+        }
+        .navbar-brand img {
+            max-width: 55%; /* Establece el ancho máximo del logo al 100% del contenedor */
+            height: auto; /* Altura automática para mantener la proporción */
+        }
+        section {
+            margin-bottom: 50%; /* Ajusta el valor según la altura de tu footer */
+        }
+        .aboutusimage {
+            background-color: transparent;
+    }
